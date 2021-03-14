@@ -12,7 +12,7 @@ function App() {
     useEffect(() => {
         fetch("https://api.tweeprint.com/categories/")
         .then(data => data.json())
-        .then((data) => setCategories(data.map(category => category.name)))
+        .then((data) => setCategories(data))
     }, []);
     console.log('categories:', categories);
 

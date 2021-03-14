@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 const Submit = ({categories}) => {
     const [link, setLink] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
+    let history = useHistory();
 
     console.log(categories)
     console.log(selectedCategory)
@@ -13,14 +15,15 @@ const Submit = ({categories}) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("https://api.tweeprint.com/tweeprints/", {
+        fetch("https://api.tweeprint.com/submit/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json());
+        .then(response => response.json())
+        .then(history.push("/tweeprints"));
     };
 
 
