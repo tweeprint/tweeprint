@@ -11,7 +11,7 @@ const Submit = ({categories}) => {
     console.log(categories.indexOf(selectedCategory) + 1)
     const data = {
             "link": link,
-            "category": categories.indexOf(selectedCategory) + 1
+            "category": selectedCategory
     }
     const handleSubmit = (e) => {
         e.preventDefault();
