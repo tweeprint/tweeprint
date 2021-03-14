@@ -2,7 +2,7 @@ import {BrowserRouter as Router,Switch,Route, Link, useRouteMatch, useParams} fr
 
 const Opener = () => {
     return(
-      <div className="bg-gray-200 overflow-hidden rounded-lg">
+      <div className="bg-gray-200 w-7-xl max-w-full overflow-hidden rounded-lg">
         <div className="px-4 py-5 sm:p-6">
           <div className="flex flex-row justify-center align-middle">
             <div className="inline-flex mx-4 items-center px-5 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">

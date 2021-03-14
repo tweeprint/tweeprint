@@ -3,9 +3,8 @@ import TweetEmbed from 'react-tweet-embed';
 
 const Tweeprints = () => {
     const [tweeprints, setTweeprints] = useState([]);
-    
+
     useEffect(() => {
-        console.log('loading effect');
         fetch("http://localhost:8000/tweeprints/")
         .then(data => data.json())
         .then(data => setTweeprints(data))
@@ -14,10 +13,10 @@ const Tweeprints = () => {
     
 
     return (
-        <div>
+        <div className="">
         {tweeprints.map(tweeprint => 
-            <div key={tweeprint.id}>
-            <TweetEmbed id={tweeprint.link.split("/")[tweeprint.link.split("/").length - 1]} />
+            <div className="" key={tweeprint.id} >
+            <TweetEmbed className="my-16" options={{align: 'center'}} id={tweeprint.link.split("/")[tweeprint.link.split("/").length - 1]} />
             </div>)}
         </div>
     )
