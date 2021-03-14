@@ -7,6 +7,9 @@ import Tweeprints from './Tweeprints.js';
 import {BrowserRouter as Router,Switch,Route, Link, useRouteMatch, useParams} from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 
+
+
+
 function App() {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
@@ -17,7 +20,7 @@ function App() {
 
   return (
     <Router>
-    <div className="App flex items-center justify-center mt-64 h-full ">
+    <div className="App flex items-center justify-center mt-16 h-full ">
         <div className="max-w-full mx-auto sm:px-6 lg:px-8">
             <h1 className="text-2xl font-bold mb-2 leading-7 text-gray-900 sm:text-3xl sm:truncate">
               <Link className="text-indigo-600" to="/">

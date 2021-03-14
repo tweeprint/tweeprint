@@ -67,7 +67,7 @@ const Submit = ({categories}) => {
             </div>
 
         <div class="pt-5">
-            <div class="flex justify-end">
+            <div class="flex justify-center sm:justify-end">
             <button type="submit" value="Submit" class="ml-3 inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Submit
             </button>

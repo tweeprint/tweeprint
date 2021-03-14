@@ -15,12 +15,16 @@ const Tweeprints = () => {
         <div className="">
         {tweeprints.map(tweeprint => 
             <div className="" key={tweeprint.id} >
-            <TweetEmbed className="my-16" 
+            <div className="flex flex-col justify-content">
+            <h2 className="align-center text-gray-400">{tweeprint.category}</h2>
+            <TweetEmbed className="mt-2 mb-16" 
                         options={{align: 'center'}} 
                         id={tweeprint.tweet_id} 
                         dnt="true"
                         />
-            </div>)}
+            </div>
+            </div>
+            )}
         </div>
     )
 }
