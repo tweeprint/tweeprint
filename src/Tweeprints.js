@@ -16,7 +16,9 @@ const Tweeprints = () => {
         <div className="">
         {tweeprints.map(tweeprint => 
             <div className="" key={tweeprint.id} >
-            <TweetEmbed className="my-16" options={{align: 'center'}} id={tweeprint.link.split("/")[tweeprint.link.split("/").length - 1]} />
+            <TweetEmbed className="my-16" 
+                        options={{align: 'center'}} 
+                        id={tweeprint.tweet_id} />
             </div>)}
         </div>
     )
