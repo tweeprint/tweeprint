@@ -10,9 +10,9 @@ import React, { useState, useEffect } from 'react';
 function App() {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:8000/categories/")
+        fetch("https://api.tweeprint.com/categories/")
         .then(data => data.json())
-        .then(data => setCategories(data.map(category => category.name)))
+        .then((data) => setCategories(data.map(category => category.name)))
     }, []);
     console.log('categories:', categories);
 

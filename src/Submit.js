@@ -4,15 +4,16 @@ const Submit = ({categories}) => {
     const [link, setLink] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
 
-    console.log(link)
-    console.log(selectedCategory.name)
+    console.log(categories)
+    console.log(selectedCategory)
+    console.log(categories.indexOf(selectedCategory) + 1)
     const data = {
             "link": link,
-            "category": selectedCategory.id,
+            "category": categories.indexOf(selectedCategory) + 1
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:8000/tweeprints/", {
+        fetch("https://api.tweeprint.com/tweeprints/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -55,6 +56,7 @@ const Submit = ({categories}) => {
                 </label>
                 <div>
                     <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)} className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option value="" selected disabled hidden>Select a category</option>
                         {categories.map(category => <option value={category} key={category.id}>{category}</option>)}
                     </select>
                 </div>

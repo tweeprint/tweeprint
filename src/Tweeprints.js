@@ -5,7 +5,7 @@ const Tweeprints = () => {
     const [tweeprints, setTweeprints] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8000/tweeprints/")
+        fetch("https://api.tweeprint.com/tweeprints/")
         .then(data => data.json())
         .then(data => setTweeprints(data))
     }, []);
