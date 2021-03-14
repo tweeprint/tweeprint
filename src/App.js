@@ -14,7 +14,6 @@ function App() {
         .then(data => data.json())
         .then((data) => setCategories(data))
     }, []);
-    console.log('categories:', categories);
 
   return (
     <Router>

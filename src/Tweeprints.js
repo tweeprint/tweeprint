@@ -9,7 +9,6 @@ const Tweeprints = () => {
         .then(data => data.json())
         .then(data => setTweeprints(data))
     }, []);
-    console.log('tweeprints:', tweeprints);
     
 
     return (
@@ -18,7 +17,9 @@ const Tweeprints = () => {
             <div className="" key={tweeprint.id} >
             <TweetEmbed className="my-16" 
                         options={{align: 'center'}} 
-                        id={tweeprint.tweet_id} />
+                        id={tweeprint.tweet_id} 
+                        dnt="true"
+                        />
             </div>)}
         </div>
     )

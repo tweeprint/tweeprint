@@ -6,9 +6,6 @@ const Submit = ({categories}) => {
     const [selectedCategory, setSelectedCategory] = useState('');
     let history = useHistory();
 
-    console.log(categories)
-    console.log(selectedCategory)
-    console.log(categories.indexOf(selectedCategory) + 1)
     const data = {
             "link": link,
             "category": selectedCategory
