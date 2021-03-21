@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
 const Submit = ({categories}) => {
+    
     const [link, setLink] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     let history = useHistory();
@@ -12,7 +13,7 @@ const Submit = ({categories}) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("https://api.tweeprint.com/submit/", {
+        fetch("http://localhost:8000/submit/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

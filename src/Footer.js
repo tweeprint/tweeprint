@@ -1,6 +1,7 @@
-import {BrowserRouter as Router,Switch,Route, Link, useRouteMatch, useParams} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+    
     return (
         <footer className="bg-blue">
         <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">

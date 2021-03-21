@@ -4,18 +4,26 @@ import Footer from './Footer.js';
 import Submit from './Submit.js';
 import About from './About.js';
 import Tweeprints from './Tweeprints.js';
-import {BrowserRouter as Router,Switch,Route, Link, useRouteMatch, useParams} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import Categories from './Categories';
 
-
-
-
-function App() {
+const App = () => {
+  
+    const [tweeprints, setTweeprints] = useState([]);
+    const [usedCategories, setUsedCategories] = useState([]);
     const [categories, setCategories] = useState([]);
+
     useEffect(() => {
-        fetch("https://api.tweeprint.com/categories/")
-        .then(data => data.json())
-        .then((data) => setCategories(data))
+      const getData = async () => {
+        const data = await fetch("http://localhost:8000/");
+        setTweeprints(await data.json())
+        const cats = await fetch("http://localhost:8000/categories/");
+        setCategories(await cats.json())
+        const usedCats = await fetch("http://localhost:8000/used_categories/");
+        setUsedCategories(await usedCats.json())
+      };
+      getData();
     }, []);
 
   return (
@@ -28,21 +36,22 @@ function App() {
               </Link>
             </h1>
             <h2 className="text-md font-bold mb-6 text-gray-400 sm:text-md sm:truncate">
-              Find and share cool twitter threads about preprints.
+              Find and share cool Twitter threads about preprints.
             </h2>
+            <Categories categories={usedCategories} />
             <Switch>
               <Route exact path="/">
                 <Opener />
                 <Footer />
               </Route>
-              <Route exact path="/submit">
-                <Submit categories={categories}/>
+              <Route path="/submit">
+                <Submit categories={categories} />
               </Route>
-              <Route exact path="/about">
+              <Route path="/about">
                 <About />
               </Route>
               <Route exact path="/tweeprints">
-                <Tweeprints/>
+                <Tweeprints tweeprints={tweeprints} />
               </Route>
             </Switch>
         </div>
