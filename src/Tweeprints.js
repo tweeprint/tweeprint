@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 const Tweeprints = ({tweeprints}) => {
 
@@ -6,7 +7,6 @@ const Tweeprints = ({tweeprints}) => {
         <div className="">
         {tweeprints.map(tweeprint => 
             <div className="my-16" key={tweeprint.pk} >
-                <a href={`${tweeprint.fields.link}`}>
 
                 <div className="flex flex-col sm:grid sm:grid-cols-4 items-center max-w-2xl">
                     <div className="flex flex-col">
@@ -19,15 +19,18 @@ const Tweeprints = ({tweeprints}) => {
                         </div>
                     </div>
                     <div className="flex flex-col sm:col-span-3 justify-content text-gray-600 text-left mx-4">
-                        <h2 className="text-center sm:text-left text-indigo-400 font-bold">{tweeprint.fields.category}</h2>
-                        <h2 className="text-lg text-center sm:text-left my-4">{tweeprint.fields.tweet_json.full_text}</h2>
+                        <Link to={`/category/${tweeprint.fields.category_slug}`} className="text-center sm:text-left hover:text-indigo-400 font-bold">
+                            <h2>{tweeprint.fields.category}</h2>
+                        </Link>
+                        <a href={`${tweeprint.fields.link}`}>
+                        <p className="text-lg text-center text-gray-700 sm:text-left my-4">{tweeprint.fields.tweet_json.full_text}</p>
                         <div className="flex flex-row text-sm justify-center sm:justify-start text-gray-400">
                             <p className="mr-4">Likes: {tweeprint.fields.tweet_json.favorite_count}</p>
                             <p className="mr-4">Retweets: {tweeprint.fields.tweet_json.retweet_count}</p>
                         </div>
+                        </a>
                     </div>
                 </div>
-                </a>
             </div>
             )}
         </div>

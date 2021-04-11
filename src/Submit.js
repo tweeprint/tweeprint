@@ -17,11 +17,12 @@ const Submit = ({categories}) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Accept": "application/json"
             },
             body: JSON.stringify(data),
         })
-        await submit.json()
-        await history.push("/tweeprints");
+        submit.json()
+        history.push("/tweeprints");
     };
 
 
@@ -34,7 +35,7 @@ const Submit = ({categories}) => {
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                 Submit a Tweeprint
                 </h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                <p class="mt-1 max-w-2xl mx-auto text-sm text-gray-500">
                 This information will be displayed publicly.
                 </p>
             </div>
