@@ -13,7 +13,7 @@ import React, { useState, useEffect } from 'react';
 function App() {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch("https://api.tweeprint.com/categories/")
+        fetch("http://localhost:8000/categories/")
         .then(data => data.json())
         .then((data) => setCategories(data))
     }, []);

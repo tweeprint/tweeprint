@@ -12,7 +12,7 @@ const Submit = ({categories}) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("https://api.tweeprint.com/submit/", {
+        fetch("http://localhost:8000/submit/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
