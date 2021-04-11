@@ -46,7 +46,7 @@ const Submit = ({categories}) => {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                     <div class="max-w-lg flex rounded-md shadow-sm">
-                    <input type="text" placeholder="twitter.com/coolpreprinturl" value={link} onChange={e => setLink(e.target.value)} className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300" />
+                    <input required type="text" placeholder="twitter.com/coolpreprinturl" value={link} onChange={e => setLink(e.target.value)} className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300" />
                     </div>
                 </div>
                 </div>
