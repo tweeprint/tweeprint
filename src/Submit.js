@@ -11,17 +11,17 @@ const Submit = ({categories}) => {
             "link": link,
             "category": selectedCategory
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        fetch("http://localhost:8000/submit/", {
+        const submit = await fetch("http://localhost:8000/submit/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
-        .then(history.push("/tweeprints"));
+        await submit.json()
+        await history.push("/tweeprints");
     };
 
 
