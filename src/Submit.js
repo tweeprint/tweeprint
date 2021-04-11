@@ -13,7 +13,7 @@ const Submit = ({categories}) => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const submit = await fetch("http://localhost:8000/submit/", {
+        const submit = await fetch("https://api.tweeprint.com/submit/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

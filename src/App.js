@@ -16,11 +16,11 @@ const App = () => {
 
     useEffect(() => {
       const getData = async () => {
-        const data = await fetch("http://localhost:8000/");
+        const data = await fetch("https://api.tweeprint.com/");
         setTweeprints(await data.json())
-        const cats = await fetch("http://localhost:8000/categories/");
+        const cats = await fetch("https://api.tweeprint.com/categories/");
         setCategories(await cats.json())
-        const usedCats = await fetch("http://localhost:8000/used_categories/");
+        const usedCats = await fetch("https://api.tweeprint.com/used_categories/");
         setUsedCategories(await usedCats.json())
       };
       getData();
